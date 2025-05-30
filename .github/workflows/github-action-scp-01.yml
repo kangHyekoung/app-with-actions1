@@ -1,13 +1,14 @@
 name: Artifact workflow-02
 
 on:
-  workflow_dispatch
+  push
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: File made by Github Actions ubuntu
         run: touch actions-file.log
 
@@ -17,5 +18,5 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
-          source: actinos-file.log
+          source: actions-file.log
           target: /home/ubuntu
