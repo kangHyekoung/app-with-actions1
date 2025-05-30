@@ -8,13 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: File made by Github Actions ubuntu
         run: touch actions-file.log
-
+        
       - name: From Github Actions to AWS EC2 through SCP
         uses: appleboy/scp-action@v1
-        with:
+        with: 
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_PRIVATE_KEY }}
