@@ -1,0 +1,20 @@
+name: Artifact workflow-02
+
+on:
+  workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: File made by Github Actions ubuntu
+        run: touch actions-file.log
+
+      - name: From Github Actions to AWS EC2 through SCP
+        uses: appleboy/scp-action@1
+        with:
+          host: ${{ secrets.EC2_HOST }}
+          username: ${{ secrets.EC2_USERNAME }}
+          key: ${{ secrets.EC2_PRIVATE_KEY }}
+          source: actinos-file.log
+          target: /home/ubuntu
