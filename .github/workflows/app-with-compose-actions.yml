@@ -1,5 +1,4 @@
 name: App With Github Actions with docker-compose CI/CD
-
 on:
   push
 
