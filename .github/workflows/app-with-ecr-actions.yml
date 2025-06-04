@@ -1,7 +1,6 @@
 name: Build and Push Docker Image To AWS ECR AND Deploy App
 on:
-  push
-  # workflow_dispatch
+  workflow_dispatch
 
 jobs:
   ci:
