@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ActionsController {
 	
-	@GetMapping(value = "/api/actions")
+	@GetMapping(value = "/")
 	public String actionsTest() {
 		return "app-with-actions version:0.0.1";
 	}
